@@ -1,6 +1,6 @@
 {
-  "name": "vue-rx",
-  "version": "5.0.0",
+  "name": "@ddder/vue-rx",
+  "version": "5.0.0-ddder.1",
   "description": "RxJS bindings for Vue",
   "main": "dist/vue-rx.js",
   "files": [
@@ -53,5 +53,10 @@
     "extends": [
       "plugin:vue-libs/recommended"
     ]
-  }
+  },
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "dependencies": {}
 }
