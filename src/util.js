@@ -52,7 +52,8 @@ export function defineReactive (vm, key, val) {
   if (key in vm) {
     vm[key] = val
   } else {
-    Vue.util.defineReactive(vm, key, val)
+    // shallow reactive
+    Vue.util.defineReactive(vm, key, val, null, true)
   }
 }
 

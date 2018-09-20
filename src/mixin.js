@@ -33,7 +33,9 @@ export default {
     }
     if (obs) {
       vm.$observables = {}
-      vm._obSubscriptions = []
+      if (!vm._obSubscriptions) {
+        vm._obSubscriptions = []
+      }
       Object.keys(obs).forEach(key => {
         defineReactive(vm, key, undefined)
         const ob = vm.$observables[key] = obs[key]
@@ -54,6 +56,7 @@ export default {
   beforeDestroy () {
     if (this._obSubscriptions) {
       this._obSubscriptions.forEach(unsub)
+      this._obSubscriptions.splice(0, this._obSubscriptions.length)
     }
   }
 }
